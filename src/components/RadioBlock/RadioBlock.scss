@@ -1,0 +1,112 @@
+.radioBlock{
+    text-align: center;
+    margin: 15px 0 15px 0;
+  }
+ .radioBlock strong {font-size: 14px;
+    color: #333;
+    display: inline-block;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+  }
+    .toolbar__input[type="radio"] {
+      display: none;
+  }
+  
+  .toolbar__label {
+      display: inline-block;
+      cursor: pointer;
+      width: 55px;
+      height: 18px;
+      padding: 3px 5px 3px 5px;
+      border-radius: 13px;
+      margin: 0 3px 0 3px;
+      background: white;
+  }
+  .toolbar__work{
+    border:2px solid #ffaf2a;
+    color:#ffaf2a;
+    
+  }
+  .toolbar__sport{
+    border:2px solid #35baf3;
+    color:#35baf3;}
+  .toolbar__skillUp{ 
+    border:2px solid #b3ee58;
+    color:#b3ee58;}
+  .toolbar__hobby{ 
+    border:2px solid #c60feb;
+    color:#c60feb;}
+    .toolbar__date{ 
+      border:2px solid #00d3ae;
+      color:#00d3ae;}
+      .toolbar__name{ 
+        border:2px solid #df43ca;
+        color:#df43ca;}
+
+
+  .toolbar__input[type="radio"]:checked+.toolbar__work {
+    border: 2px solid #ffaf2a;
+    background-color:#ffaf2a;
+    color: white;
+  }
+  .toolbar__work:hover {
+    color: white;
+   border: 2px solid #ffaf2a;
+   background-color:#ffaf2a;
+  }
+  .toolbar__input[type="radio"]:checked+.toolbar__skillUp {
+    border: 2px solid #b3ee58;
+    background-color:#b3ee58;
+    color: white;
+  }
+  .toolbar__skillUp:hover {
+    color: white;
+   border: 2px solid #b3ee58;
+   background-color:#b3ee58;  
+  }
+  .toolbar__input[type="radio"]:checked+.toolbar__sport {
+    border: 2px solid #35baf3;
+    background-color:#35baf3;
+    color: white;
+  }
+  .toolbar__sport:hover {
+    color: white;
+   border: 2px solid #35baf3;
+   background-color:#35baf3;
+  }
+  .toolbar__input[type="radio"]:checked+.toolbar__hobby {
+    border: 2px solid #c60feb;
+    background-color:#c60feb;
+    color: white;
+  }
+  .toolbar__hobby:hover {
+    color: white;
+   border: 2px solid #c60feb;
+   background-color:#c60feb;
+     
+    
+  }
+
+  
+  .toolbar__input[type="radio"]:checked+.toolbar__date{
+    border: 2px solid #00d3ae;
+    background-color:#00d3ae;
+    color: white;
+  }
+  .toolbar__date:hover {
+    color: white;
+   border: 2px solid #00d3ae;
+   background-color:#00d3ae;
+  }
+
+  .toolbar__input[type="radio"]:checked+.toolbar__name{
+    border: 2px solid #df43ca;
+    background-color:#df43ca;
+    color: white;
+  }
+  .toolbar__name:hover {
+    color: white;
+   border: 2px solid #df43ca;
+   background-color:#df43ca;
+  }
+

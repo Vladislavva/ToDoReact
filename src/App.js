@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import TodoList from './screens/TodoList/TodoList';
+import Header from './screens/Header/Header';
+import AddForm from './screens/AddForm/AddForm';
+import Todos from './screens/Todos/Todos'
+// import { Router, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route} from "react-router-dom";
+import SignInForm from "./screens/SignInForm/SignInForm";
+import SignUpForm from "./screens/SignUpForm/SignUpForm";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/sign-in">
+            <SignInForm />
+          </Route>
+          <Route path="/sign-up">
+            <SignUpForm />
+          </Route>
+          <Route path="/to-do">
+            <Todos/>
+          </Route>
+          <Route path="/add-task">
+            < AddForm />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

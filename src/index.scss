@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+@import "../src/shared/styles/reset.scss";
+@import "/src/screens/TodoList/TodoListItem/TodoListItem.scss";
+@import "/src/components/Sort/Sort.scss";
+@import "/src/screens/TodoList/TodoList.scss";
+@import "/src/screens/Header/Header.scss";
+@import "/src/screens/SignInForm/SignInForm.scss";
+@import "/src/screens/SignUpForm/SignUpForm.scss";
+@import "/src/components/Button/Button.scss";
+@import "/src/components/FormUp/FormUp.scss";
+@import "../src/screens/AddForm/AddForm.scss";
+@import "../src/screens/Todos/Todos.scss";
+@import "../src/components/TodosHeader/TodosHeader.scss";
+@import "../src/components/RadioBlock/RadioBlock.scss";

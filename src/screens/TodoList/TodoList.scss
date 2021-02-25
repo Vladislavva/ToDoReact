@@ -1,0 +1,19 @@
+.todoList{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    justify-content: center;
+    width: 60%;
+    margin: 10px;
+    margin: 0 auto;
+    padding: 30px 0 30px 0;
+  
+
+    &__lable{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .todoList__container{
+        width: 80%;
+    }
+}

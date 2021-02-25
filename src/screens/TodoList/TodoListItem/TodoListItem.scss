@@ -1,0 +1,47 @@
+.todoListItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 5px 0;
+    
+    &__checkbox{
+        width: 2vw;
+        
+    }
+    &__task{
+        width: 50vw;
+       
+    }
+
+    &__type{
+        color: white;
+       width: 5vw;;
+        padding: 3px 5px 3px 5px;
+        text-align: center;
+        border-radius: 13px;
+        
+        &-work{
+            background-color: #ffaf2a ;
+        }
+        &-skillup{
+             background-color: #b3ee58;
+        }
+        &-hobby{
+            background-color: #c60feb;
+        }
+        &-sport{
+            background: #35baf3;
+        }
+        &-noType{
+            background: black;
+        }
+    }
+    &__date{
+        width: 5vw;
+        font-size: 10px;
+        color:#00d3ae;
+        margin: 0 0 0 15px;
+        
+    }
+}

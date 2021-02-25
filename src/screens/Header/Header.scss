@@ -1,0 +1,49 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 0;
+    background: #f6f8fa;
+
+    &__userBlock{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    }
+    &__userBlock-img{
+        height: 55px;
+    }
+    &__userBlock-name{
+        font-size: 25px;
+        font-weight: bold;
+        margin: 0 0 0 3%;
+    }
+    &__navBlock{
+       margin: 0 0 0 10%; 
+       
+    }
+    &__navBlock-ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: centr;
+        flex-wrap: wrap;
+        align-items: center;
+
+        height: 100px;
+        
+    }
+    &__navBlock-li{
+       
+        margin: 5px;
+             
+        
+    }
+    &__navBlock-link{
+        width: 70px;
+        height: 20px;  
+        padding: 5px 5px 5px 5px;
+        text-decoration: none;
+        color: white;
+    }
+}

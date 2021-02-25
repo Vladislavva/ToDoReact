@@ -1,0 +1,17 @@
+.btn{
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 5px 0;
+    border-radius: 2px;
+
+
+    &-orange{background: #ffaf2a;}
+    &-yellowGreen{background: #b3ee58;}
+    &-purple{background:  #c60feb;}
+    &-turquoise{background: #00d3ae;}
+    &-blue{background:#35baf3;}
+}

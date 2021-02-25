@@ -1,0 +1,55 @@
+.sort{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 40px;
+    line-height: 3;
+    background: #939ba3;
+    overflow: hidden;
+    border-radius: .25em;
+    
+    &:hover::after {
+        color: white;
+        
+      }
+      
+      &::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #939ba3;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+      }
+      select {
+        flex: 1;
+        padding: 0 .5em;
+        color: black;
+        background-color: #939ba3;
+        border: none;
+        cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+      }
+    &__headding{
+        color:black;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    &__select{
+         &:select,select:focus,select:active,option,option:focus,option:active {
+            outline:none;
+            }
+        
+          
+          
+    }
+}
