@@ -7,7 +7,7 @@ const RadioBlock = ({radioBtn, inputValue}) => {
     <div className="radioBlock">
       <div className="radioBlock__toolbar">
         {radioBtn.map(({radioNumber, inputName}) => (
-          <div   key={inputName}>
+          <div className="toolbar-inputBlock"  key={inputName}>
             <input
               className="toolbar__input "
               type="radio"
@@ -22,50 +22,9 @@ const RadioBlock = ({radioBtn, inputValue}) => {
               {inputName}
             </label>
           </div>
+          
         ))}
-        {/* <input
-            className="toolbar__input "
-            type="radio"
-            id="radio1"
-            name="radios"
-            value="Work"
-          />
-          <label className="toolbar__label toolbar__work" for="radio1">
-            Work
-          </label>
-
-          <input
-            className="toolbar__input"
-            type="radio"
-            id="radio2"
-            name="radios"
-            value="Sport"
-          />
-          <label className="toolbar__label toolbar__sport" for="radio2">
-            Sport
-          </label>
-
-          <input
-            className="toolbar__input"
-            type="radio"
-            id="radio3"
-            name="radios"
-            value="SkillUp"
-          />
-          <label className="toolbar__label toolbar__skillUp" for="radio3">
-            SkillUp
-          </label>
-
-          <input
-            className="toolbar__input"
-            type="radio"
-            id="radio4"
-            name="radios"
-            value="Hobby"
-          />
-          <label className="toolbar__label toolbar__hobby" for="radio4">
-            Hobby
-          </label> */}
+        
       </div>
     </div>
   );

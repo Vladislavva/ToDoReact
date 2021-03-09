@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import TodosHeader from "../../components/TodosHeader/TodosHeader";
 import TodoList from "../TodoList/TodoList";
-
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
 
@@ -55,6 +56,22 @@ import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
 //     type: "hobby",
 //   },
 // ];
+
+
+const loader=()=>{
+  return (
+    <Loader
+      type="Puff"
+      color="#00BFFF"
+      height={100}
+      width={100}
+      timeout={3000} //3 secs
+    />
+  );
+}
+
+
+
 
 const sortTodayTasks = (tasks) => {
   const today = new Date();
@@ -116,7 +133,14 @@ const Todos = () => {
   return (
     <div className="todos">
       <TodosHeader inputValue={inputValue} />
-      {!isLoaded(testtodos) && "loading"}
+      {!isLoaded(testtodos) &&  <div className="todos__loader"> <Loader
+        type="ThreeDots"
+        color="#b3ee58"
+        height={100}
+        width={100}
+        timeout={3000}
+         
+      /></div>}
       {isLoaded(testtodos) && !sortedTask && (
         <>
           <TodoList
