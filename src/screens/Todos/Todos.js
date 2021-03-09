@@ -4,8 +4,8 @@ import TodoList from "../TodoList/TodoList";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { useSelector } from "react-redux";
-import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
-
+import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
+import EmptyPage from "../EmtyPage/EmptyPage";
 // const todos = [
 //   {
 //     task: "HTML I",
@@ -57,8 +57,7 @@ import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
 //   },
 // ];
 
-
-const loader=()=>{
+const loader = () => {
   return (
     <Loader
       type="Puff"
@@ -68,10 +67,7 @@ const loader=()=>{
       timeout={3000} //3 secs
     />
   );
-}
-
-
-
+};
 
 const sortTodayTasks = (tasks) => {
   const today = new Date();
@@ -133,15 +129,19 @@ const Todos = () => {
   return (
     <div className="todos">
       <TodosHeader inputValue={inputValue} />
-      {!isLoaded(testtodos) &&  <div className="todos__loader"> <Loader
-        type="ThreeDots"
-        color="#b3ee58"
-        height={100}
-        width={100}
-        timeout={3000}
-         
-      /></div>}
-      {isLoaded(testtodos) && !sortedTask && (
+      {!isLoaded(testtodos) && (
+        <div className="todos__loader">
+          {" "}
+          <Loader
+            type="ThreeDots"
+            color="#b3ee58"
+            height={100}
+            width={100}
+            timeout={3000}
+          />
+        </div>
+      )}
+      {isLoaded(testtodos) && !isEmpty(testtodos) && !sortedTask && (
         <>
           <TodoList
             todoListName="New Tasks"
@@ -157,7 +157,10 @@ const Todos = () => {
           />
         </>
       )}
-      {isLoaded(testtodos) && sortedTask && <TodoList todoList={sortedTask} />}
+      {isLoaded(testtodos) && !isEmpty(testtodos) && sortedTask && (
+        <TodoList todoList={sortedTask} />
+      )}
+      {isEmpty(testtodos) && isLoaded(testtodos) && <EmptyPage btnColor="orange" headerText="You don`t have task" btnName="add Task" linkTo="add-task"/>}
     </div>
   );
 };

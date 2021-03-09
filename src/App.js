@@ -4,6 +4,7 @@ import Header from './screens/Header/Header';
 import AddForm from './screens/AddForm/AddForm';
 import Todos from './screens/Todos/Todos'
 // import { Router, Switch } from 'react-router-dom';
+import EmptyPage from "./screens/EmtyPage/EmptyPage";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +14,7 @@ import SignUpForm from "./screens/SignUpForm/SignUpForm";
 function App() {
   return (
     <>
+  
       <Router>
         <Header key="index"/>
         <Switch>
