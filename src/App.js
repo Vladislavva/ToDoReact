@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        <Header key="index"/>
         <Switch>
           <Route path="/sign-in">
             <SignInForm />

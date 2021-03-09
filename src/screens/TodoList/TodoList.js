@@ -3,7 +3,6 @@ import TodoListItem from './TodoListItem/TodoListItem';
 
 
 const TodoList = ({todoListName, todoList}) => {
- 
     return (
         <div className="todoList">
             <label className="todoList__lable">{todoListName}</label>

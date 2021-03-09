@@ -1,27 +1,27 @@
 import React from "react";
 
-const RadioBlock = ({radioBtn}) => {
+const RadioBlock = ({radioBtn, inputValue}) => {
 
 
   return (
     <div className="radioBlock">
       <div className="radioBlock__toolbar">
         {radioBtn.map(({radioNumber, inputName}) => (
-          <>
+          <div   key={inputName}>
             <input
               className="toolbar__input "
               type="radio"
               id={`radio${radioNumber}`}
               name="radios"
-              value={inputName}
+              value={inputName} onChange={(e)=>inputValue(e)}
             />
             <label
               className={`toolbar__label toolbar__${inputName}`}
-              for={`radio${radioNumber}`}
+              htmlFor={`radio${radioNumber}`}
             >
               {inputName}
             </label>
-          </>
+          </div>
         ))}
         {/* <input
             className="toolbar__input "

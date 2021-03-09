@@ -22,28 +22,16 @@
       margin: 0 3px 0 3px;
       background: white;
   }
-  .toolbar__work{
-    border:2px solid #ffaf2a;
-    color:#ffaf2a;
+ 
+  
+ 
+  
     
-  }
-  .toolbar__sport{
-    border:2px solid #35baf3;
-    color:#35baf3;}
-  .toolbar__skillUp{ 
-    border:2px solid #b3ee58;
-    color:#b3ee58;}
-  .toolbar__hobby{ 
-    border:2px solid #c60feb;
-    color:#c60feb;}
-    .toolbar__date{ 
-      border:2px solid #00d3ae;
-      color:#00d3ae;}
-      .toolbar__name{ 
-        border:2px solid #df43ca;
-        color:#df43ca;}
-
-
+     
+  .toolbar__work{
+     border:2px solid #ffaf2a;
+     color:#ffaf2a;
+          }
   .toolbar__input[type="radio"]:checked+.toolbar__work {
     border: 2px solid #ffaf2a;
     background-color:#ffaf2a;
@@ -54,6 +42,9 @@
    border: 2px solid #ffaf2a;
    background-color:#ffaf2a;
   }
+  .toolbar__skillUp{ 
+    border:2px solid #b3ee58;
+    color:#b3ee58;}
   .toolbar__input[type="radio"]:checked+.toolbar__skillUp {
     border: 2px solid #b3ee58;
     background-color:#b3ee58;
@@ -64,6 +55,9 @@
    border: 2px solid #b3ee58;
    background-color:#b3ee58;  
   }
+  .toolbar__sport{
+    border:2px solid #35baf3;
+    color:#35baf3;}
   .toolbar__input[type="radio"]:checked+.toolbar__sport {
     border: 2px solid #35baf3;
     background-color:#35baf3;
@@ -74,6 +68,9 @@
    border: 2px solid #35baf3;
    background-color:#35baf3;
   }
+  .toolbar__hobby{ 
+    border:2px solid #c60feb;
+    color:#c60feb;}
   .toolbar__input[type="radio"]:checked+.toolbar__hobby {
     border: 2px solid #c60feb;
     background-color:#c60feb;
@@ -82,12 +79,11 @@
   .toolbar__hobby:hover {
     color: white;
    border: 2px solid #c60feb;
-   background-color:#c60feb;
-     
-    
+   background-color:#c60feb;   
   }
-
-  
+  .toolbar__date{ 
+    border:2px solid #00d3ae;
+    color:#00d3ae;}
   .toolbar__input[type="radio"]:checked+.toolbar__date{
     border: 2px solid #00d3ae;
     background-color:#00d3ae;
@@ -99,6 +95,9 @@
    background-color:#00d3ae;
   }
 
+  .toolbar__name{ 
+    border:2px solid #df43ca;
+    color:#df43ca;}
   .toolbar__input[type="radio"]:checked+.toolbar__name{
     border: 2px solid #df43ca;
     background-color:#df43ca;
@@ -108,5 +107,19 @@
     color: white;
    border: 2px solid #df43ca;
    background-color:#df43ca;
+  }
+  .toolbar__all{ 
+    border:2px solid #df4343;
+    color:#df4343;}
+
+  .toolbar__input[type="radio"]:checked+.toolbar__all{
+    border: 2px solid  #df4343;
+    background-color: #df4343;
+    color: white;
+  }
+  .toolbar__all:hover {
+    color: white;
+   border: 2px solid  #df4343;
+   background-color: #df4343;
   }
 

@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import RadioBlock from "../RadioBlock/RadioBlock";
 const radioBtn = [
+  {
+    radioNumber: 0,
+    inputName: "all",
+  },
     {
       radioNumber: 1,
       inputName: "work",
@@ -28,7 +32,7 @@ const radioBtn = [
         inputName: "name",
       }
   ];
-const TodosHeader = () => {
+const TodosHeader = ({inputValue}) => {
   return (
     <div className="todosHeader">
       <nav className="todosHeader__nav">
@@ -45,7 +49,7 @@ const TodosHeader = () => {
       </nav>
       <div>
         <h2>SortBy</h2>
-        <RadioBlock radioBtn={radioBtn} />
+        <RadioBlock radioBtn={radioBtn} inputValue={inputValue}/>
       </div>
     </div>
   );
