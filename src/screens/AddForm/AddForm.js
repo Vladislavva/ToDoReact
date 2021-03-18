@@ -2,6 +2,10 @@ import React from "react";
 import moment from "moment";
 import taskLogo from "../../shared/img/taskLogo.png";
 import RadioBlock from "../../components/RadioBlock/RadioBlock";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useFirestore } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
 const radioBtn = [
   {
@@ -22,8 +26,30 @@ const radioBtn = [
     }
 ];
 
+
+
+
+
+
+
+
+
 const AddForm = () => {
+  const { register, getValues, reset } = useForm();
   const today = new Date();
+  const firestore = useFirestore();
+  const { uid } = useSelector((state) => state.firebase.auth);
+  const [presentToDo, setPresentToDo] = useState("");
+
+  const addNewTodo = (todo) => {
+    firestore    
+      .collection("users/1/todos")
+      .add(todo)
+      .then(()=>reset());
+      
+  };
+
+
 
   return (
     <div className="addForm">
@@ -39,47 +65,33 @@ const AddForm = () => {
           <label className="form__input-label" htmlFor="radio-1">
             Task Name
           </label>
-          <input type="text" />
+          <input  type="text" ref={register} name="task"/>
         </div>
-        <RadioBlock radioBtn={radioBtn} />
-        {/* <div className="addForm__radio-btn">
-                    <input id="radio-1" type="radio" name="radio" value="1" />
-                    <label htmlFor="radio-1" >Work</label>
-                </div>
-
-                <div className="addForm__radio-btn">
-                    <input id="radio-2" type="radio" name="radio" value="2" />
-                    <label htmlFor="radio-2">Sport</label>
-                </div>
-
-                <div className="addForm__radio-btn">
-                    <input id="radio-3" type="radio" name="radio" value="3" />
-                    <label htmlFor="radio-3">SkillUp</label>
-                </div>
-                <div className="addForm__radio-btn">
-                    <input id="radio-4" type="radio" name="radio" value="4" />
-                    <label htmlFor="radio-4">Hobby</label>
-                </div> */}
-        <input
+        <RadioBlock register={register} radioBtn={radioBtn} />
+    
+        <button
           className="btn btn-turquoise"
-          type="submit"
+          type="button"
           value="add task"
-        ></input>
+          onClick={() => {
+            const values = getValues(); 
+            const data = new Date()
+            const task = {
+              ...values,
+              date: data.toISOString(),
+              done: false
+            }
+            debugger
+          addNewTodo(task)
+          }}
+        >ADDD</button>
       </form>
-      {/* <div class="prod_checbox">  
-    <div class="radio-toolbar"> 
-        <input type="radio" id="radio1" name="radios" value="Стандатный" />
-        <label for="radio1">Стандатный</label>
-        
-        <input type="radio" id="radio2" name="radios" value="Морозостойкий"/>
-        <label for="radio2">Морозостойкий</label>
-        
-        <input type="radio" id="radio3" name="radios" value="Паростойкий"/>
-        <label for="radio3">Паростойкий</label>
-    </div> 
-</div> */}
+     
     </div>
   );
+  
 };
+
+
 
 export default AddForm;

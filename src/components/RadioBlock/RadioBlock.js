@@ -1,6 +1,6 @@
 import React from "react";
 
-const RadioBlock = ({radioBtn, inputValue}) => {
+const RadioBlock = ({radioBtn, register,  inputValue}) => {
 
 
   return (
@@ -12,8 +12,9 @@ const RadioBlock = ({radioBtn, inputValue}) => {
               className="toolbar__input "
               type="radio"
               id={`radio${radioNumber}`}
-              name="radios"
-              value={inputName} onChange={(e)=>inputValue(e)}
+              name="type"
+              ref={register}
+              value={inputName} 
             />
             <label
               className={`toolbar__label toolbar__${inputName}`}

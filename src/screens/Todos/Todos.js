@@ -118,17 +118,17 @@ const Todos = () => {
   const testtodos = useSelector((state) => state.firestore.data.todos);
 
   const inputValue = useCallback((e) => {
-    if (e.target.value !== "all") {
+    if (e.target.value !== "all" && !isEmpty(testtodos)) {
       const newTasks = sortFunc(e.target.value, Object.values(testtodos));
       setSortedTask([...newTasks]);
     }
   });
+  
 
   const [sortedTask, setSortedTask] = useState();
 
   return (
     <div className="todos">
-      <TodosHeader inputValue={inputValue} />
       {!isLoaded(testtodos) && (
         <div className="todos__loader">
           {" "}
@@ -143,6 +143,7 @@ const Todos = () => {
       )}
       {isLoaded(testtodos) && !isEmpty(testtodos) && !sortedTask && (
         <>
+          <TodosHeader inputValue={inputValue} />
           <TodoList
             todoListName="New Tasks"
             todoList={sortTodayTasks(Object.values(testtodos))}
