@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
-
+import DatePicker from "react-datepicker";
+import calendarImg from "../../shared/img/calendar.png"
 const radioBtn = [
   {
     radioNumber: 1,
@@ -40,7 +41,7 @@ const AddForm = () => {
   const firestore = useFirestore();
   const { uid } = useSelector((state) => state.firebase.auth);
   const [presentToDo, setPresentToDo] = useState("");
-
+  const [startDate, setStartDate] = useState(new Date());
   const addNewTodo = (todo) => {
     firestore    
       .collection("users/1/todos")
@@ -48,6 +49,8 @@ const AddForm = () => {
       .then(()=>reset());
       
   };
+  
+   
 
 
 
@@ -68,7 +71,11 @@ const AddForm = () => {
           <input  type="text" ref={register} name="task"/>
         </div>
         <RadioBlock register={register} radioBtn={radioBtn} />
-    
+        <div className="form__datePickerBlock">
+          <img src={calendarImg} className="datePickerImg"/>
+        <DatePicker className="datePiker" selected={startDate} onChange={date => setStartDate(date)} name='datepicker'/>
+      
+        </div>
         <button
           className="btn btn-turquoise"
           type="button"
@@ -78,10 +85,11 @@ const AddForm = () => {
             const data = new Date()
             const task = {
               ...values,
-              date: data.toISOString(),
+              date: startDate.toISOString(),
               done: false
             }
-            debugger
+            
+            console.log(task)
           addNewTodo(task)
           }}
         >ADDD</button>

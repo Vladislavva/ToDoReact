@@ -2,8 +2,8 @@ import './App.scss';
 import TodoList from './screens/TodoList/TodoList';
 import Header from './screens/Header/Header';
 import AddForm from './screens/AddForm/AddForm';
-import Todos from './screens/Todos/Todos'
-// import { Router, Switch } from 'react-router-dom';
+import Todos from './screens/Todos/Todos';
+
 import EmptyPage from "./screens/EmtyPage/EmptyPage";
 import {
   BrowserRouter as Router,
@@ -14,7 +14,7 @@ import SignUpForm from "./screens/SignUpForm/SignUpForm";
 function App() {
   return (
     <>
-  
+ 
       <Router>
         <Header key="index"/>
         <Switch>
@@ -32,6 +32,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+ 
     </>
   );
 }

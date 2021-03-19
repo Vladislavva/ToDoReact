@@ -1,0 +1,48 @@
+
+.datePiker{
+    border: 2px solid #df43ca;
+      color: #df43ca;
+      border-radius: 13px;
+    width:70px;
+   
+  }
+  .react-datepicker{
+    border: 2px solid #df43ca;
+    &__header{
+      text-align: center;
+      background-color: #ffbcf6;
+      border-bottom: 1px solid #df43ca;
+      border-top-left-radius: 0.3rem;
+      padding-top: 8px;
+      position: relative;
+    }
+    &__navigation--next{
+      right: 10px;
+      border-left-color: #df43ca;
+      &:hover{
+        border-right-color:#ffbcf6;;
+      }
+  }
+  
+  &__navigation--previous {
+    left: 10px;
+    border-right-color: #df43ca;
+    &:hover{
+      border-right-color:#ffbcf6;;
+    }
+  }
+  &__day--selected{
+    background-color: #df43ca;
+  }
+  &__day{
+    &:hover{
+      background:#ffbcf6;;
+    }
+  
+  }
+  &__triangle{
+  
+  }
+  }
+  
+  

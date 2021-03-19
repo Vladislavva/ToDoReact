@@ -26,12 +26,27 @@
     flex-direction: column;
     justify-content: flex-start;
     margin: 5px 0;
+   
   }
-  
+  .form__datePickerBlock{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+    .datePickerImg{
+      height: 40px;
+    }
+  }
   .form__input-label {
     margin: 0 5px;
   }
+ 
 }
+
+
+
+
+
 
 
 
