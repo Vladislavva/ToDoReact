@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import moment from "moment";
 import taskLogo from "../../shared/img/taskLogo.png";
 import RadioBlock from "../../components/RadioBlock/RadioBlock";
@@ -7,7 +8,9 @@ import { useState } from "react";
 import { useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
-import calendarImg from "../../shared/img/calendar.png"
+import calendarImg from "../../shared/img/calendar.png";
+import Toast from "../../components/Toast/Toast";
+import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
 const radioBtn = [
   {
     radioNumber: 1,
@@ -50,7 +53,6 @@ const AddForm = () => {
       
   };
   
-   
 
 
 
@@ -94,7 +96,11 @@ const AddForm = () => {
           }}
         >ADDD</button>
       </form>
-     
+      {/* {isLoaded(task) && !isEmpty(testtodos) && sortedTask && (
+      ReactDOM.createPortal(<Toast toastType={'error'} toastMassage={'uuuuue'}/> , document.getElementsByClassName('header');)
+      )}
+       */}
+
     </div>
   );
   

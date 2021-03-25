@@ -57,6 +57,8 @@ import EmptyPage from "../EmtyPage/EmptyPage";
 //   },
 // ];
 
+
+
 const loader = () => {
   return (
     <Loader
@@ -116,7 +118,7 @@ const Todos = () => {
     storeAs: "todos",
   });
   const testtodos = useSelector((state) => state.firestore.data.todos);
-
+  console.log(testtodos)
   const inputValue = useCallback((e) => {
     if (e.target.value !== "all" && !isEmpty(testtodos)) {
       const newTasks = sortFunc(e.target.value, Object.values(testtodos));
